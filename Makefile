@@ -9,5 +9,4 @@ build:
 	go build -o ${BINARY} -v
 
 run:
-	go build -o ${BINARY} -v ./...
 	./${BINARY} --token=${TOKEN}
