@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"time"
 	"ynab-metrics/pkg/accounts"
 	"ynab-metrics/pkg/budgets"
 	"ynab-metrics/pkg/ratelimit"
@@ -26,10 +27,17 @@ func main() {
 	}
 
 	c := ynab.NewClient(*token)
-	budgets := budgets.GetBudgets(c)
-	accounts.StartMetrics(c, budgets)
-	transactions.StartMetrics(c, budgets)
-	ratelimit.StartMetrics(c)
+
+	go func() {
+		for {
+			budgets := budgets.GetBudgets(c)
+			accounts.StartMetrics(c, budgets)
+			transactions.StartMetrics(c, budgets)
+			ratelimit.StartMetrics(c)
+
+			time.Sleep(time.Duration(90 * time.Second))
+		}
+	}()
 
 	http.Handle("/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(*addr, nil))

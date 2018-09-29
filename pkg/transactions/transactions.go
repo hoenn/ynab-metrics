@@ -42,7 +42,6 @@ func StartMetrics(c ynab.ClientServicer, budgets []*budget.Budget) {
 	}
 
 	for _, t := range transactions {
-		fmt.Println(t)
 		budgetTransactions.WithLabelValues(
 			t.budgetID,
 			safe(t.transaction.PayeeName),
