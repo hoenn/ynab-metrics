@@ -7,6 +7,7 @@ import (
 	"ynab-metrics/pkg/accounts"
 	"ynab-metrics/pkg/budgets"
 	"ynab-metrics/pkg/ratelimit"
+	"ynab-metrics/pkg/transactions"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
@@ -27,6 +28,7 @@ func main() {
 	c := ynab.NewClient(*token)
 	budgets := budgets.GetBudgets(c)
 	accounts.StartMetrics(c, budgets)
+	transactions.StartMetrics(c, budgets)
 	ratelimit.StartMetrics(c)
 
 	http.Handle("/metrics", promhttp.Handler())

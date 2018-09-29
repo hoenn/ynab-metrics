@@ -1,11 +1,12 @@
 package accounts
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"go.bmvs.io/ynab"
 	"go.bmvs.io/ynab/api/budget"
+	u "ynab-metrics/pkg/units"
 )
 
 var accountBalance = prometheus.NewGaugeVec(prometheus.GaugeOpts{
@@ -20,14 +21,11 @@ func init() {
 
 //StartMetrics collects accounts metrics given a list of budgets
 func StartMetrics(c ynab.ClientServicer, budgets []*budget.Budget) {
-	fmt.Println("Accounts...")
+	log.Println("Getting Accounts...")
 
 	for _, b := range budgets {
 		for _, a := range b.Accounts {
-			accountBalance.WithLabelValues(a.ID).Set(float64(dollars(a.Balance)))
+			accountBalance.WithLabelValues(a.ID).Set(float64(u.Dollars(a.Balance)))
 		}
 	}
-}
-func dollars(milliunits int64) int64 {
-	return milliunits / 1000
 }

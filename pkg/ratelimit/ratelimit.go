@@ -1,7 +1,7 @@
 package ratelimit
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"go.bmvs.io/ynab"
@@ -25,7 +25,7 @@ func init() {
 
 //StartMetrics writes rate limiting metrics from the client response
 func StartMetrics(c ynab.ClientServicer) {
-	fmt.Println("Rate limting metrics...")
+	log.Print("Getting Rate limting metrics...")
 	rateLimitUsed.Set(float64(c.RateLimit().Used()))
 	rateLimitTotal.Set(float64(c.RateLimit().Total()))
 }
