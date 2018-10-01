@@ -14,7 +14,7 @@ var budgetTransactions = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 	Name: "budget_transactions",
 	Help: "Budget transactions",
 },
-	[]string{"budget_uuid", "payee_name", "category_name", "account_name", "transaction_id"})
+	[]string{"budget_name", "payee_name", "category_name", "account_name", "transaction_id"})
 
 func init() {
 	prometheus.MustRegister(budgetTransactions)
@@ -22,7 +22,7 @@ func init() {
 
 type transactionFromBudget struct {
 	transaction *transaction.Transaction
-	budgetID    string
+	budgetName  string
 }
 
 //StartMetrics abcd...
@@ -43,7 +43,7 @@ func StartMetrics(c ynab.ClientServicer, budgets []*budget.Budget) {
 
 	for _, t := range transactions {
 		budgetTransactions.WithLabelValues(
-			t.budgetID,
+			t.budgetName,
 			safe(t.transaction.PayeeName),
 			safe(t.transaction.CategoryName),
 			t.transaction.AccountName,
@@ -56,7 +56,7 @@ func addBudgetIDs(ts []*transaction.Transaction, b *budget.Budget) []*transactio
 	for _, t := range ts {
 		tfbs = append(tfbs, &transactionFromBudget{
 			transaction: t,
-			budgetID:    b.ID,
+			budgetName:  b.Name,
 		})
 	}
 	return tfbs

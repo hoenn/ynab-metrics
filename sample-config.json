@@ -1,0 +1,5 @@
+{
+    "port": 8080,
+    "include_transactions": true,
+    "user_token": "z02f...youraccesstoken...2e7"
+}

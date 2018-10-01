@@ -9,7 +9,7 @@ import (
 
 //GetBudgets returns the list of budgets associated with user token
 func GetBudgets(c ynab.ClientServicer) []*budget.Budget {
-	log.Print("Getting budgets...")
+	log.Print("Getting Budgets...")
 	budgetSummaries, err := c.Budget().GetBudgets()
 	if err != nil {
 		log.Fatal("Unable to get budgets, check your access token")
