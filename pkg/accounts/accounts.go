@@ -13,7 +13,7 @@ var accountBalance = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 	Name: "account_balance",
 	Help: "Account balance gauge",
 },
-	[]string{"uuid", "name"})
+	[]string{"budget_name", "name"})
 
 func init() {
 	prometheus.MustRegister(accountBalance)
@@ -25,7 +25,7 @@ func StartMetrics(c ynab.ClientServicer, budgets []*budget.Budget) {
 
 	for _, b := range budgets {
 		for _, a := range b.Accounts {
-			accountBalance.WithLabelValues(a.ID, a.Name).Set(float64(u.Dollars(a.Balance)))
+			accountBalance.WithLabelValues(b.Name, a.Name).Set(float64(u.Dollars(a.Balance)))
 		}
 	}
 }
