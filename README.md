@@ -8,6 +8,7 @@
 The YNAB browser and mobile apps have some graphs available, namely Net Worth at a monthly resolution, but you may be interested in creating your own graphs, at a much finer resolution, on the specific topics worth seeing. Prometheus will scrape the data that the exporter exposes and organize the time series data we would need.
 
 ## Grafana
+#### An example dashboard
 ![img](grafana.png)
 
 ## Metrics Collected
