@@ -10,8 +10,6 @@ The YNAB browser and mobile apps have some graphs available, namely Net Worth at
 ## Grafana
 ![img](grafana.png)
 
-#### Premade dashboard
-
 ## Metrics Collected
 The metrics currently collected are
 
@@ -24,7 +22,19 @@ The metrics currently collected are
 |rate_limit_total| | API limit|
 |rate_limit_used| | requests this hour|
 
+## Configuration
+```json
+sample-config.json
+{
+  "port": "8080",
+  "include_transactions": true,
+  "access_token": "123...yourtoken...abc",
+  "interval_seconds": 90
+}
+```
+
 ## Limitations
+The YNAB API enforces [rate limiting](https://api.youneedabudget.com/#rate-limiting) of 200 requests per hour starting from the first request. The `ynab-metrics` exporter, dependning on if transactions metrics are configured, will use one request to get your budget IDs, one request to get info from each budget, and one request for each budget's transactions. More budgets means more requests, if you're hitting the rate limit frequently you should adjust the `interval_seconds` configuration to be larger.
 
 ## Installation
 ```
