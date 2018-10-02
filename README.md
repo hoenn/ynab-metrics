@@ -69,4 +69,4 @@ Make sure you `make build` before trying to `docker-compose up`. After that's do
 
 By default: Grafana will run on port 3000, Prometheus on 9090, and the ynab-metrics exporter on 8080.
 
-The `ynab-metrics/config.json` file will be mounted and used to run the ynab-metrics container the `ynab-metrics/docker/prometheus/prometheus.yml` config is used for prometheus.
+The `ynab-metrics/config.json` file will be mounted and used to run the ynab-metrics container. The `ynab-metrics/docker/prometheus/prometheus.yml` config is used for prometheus.
