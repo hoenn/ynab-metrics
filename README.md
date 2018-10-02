@@ -53,7 +53,7 @@ $ make build
 $ make run
 ```
 
-As long as no error messages appear, navigate to `http://localhost:8080` in your browser and you should see metrics appearing.a
+As long as no error messages appear, navigate to `http://localhost:8080` in your browser and you should see metrics appearing.
 
 ## Simple guide to running everything you need
 
