@@ -60,7 +60,7 @@ As long as no error messages appear, navigate to `http://localhost:8080` in your
 
 ### Do it yourself
 
-Check out the install guides for [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](https://github.com/grafana/grafana), all you should need is to know where `ynab-metrics` is posting metrics once it's running (default `localhost:8080`)
+Check out the install guides for [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](https://github.com/grafana/grafana), all you should need is to know where `ynab-metrics` is posting metrics once it's running (default `localhost:8080/metrics`)
 
 ### Docker Compose
 You can run the full prometheus, grafana, ynab-metrics stack with the docker-compose file in `ynab-metrics/docker/`
