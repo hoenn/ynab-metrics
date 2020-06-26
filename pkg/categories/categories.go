@@ -3,7 +3,7 @@ package categories
 import (
 	"log"
 
-	u "ynab-metrics/pkg/units"
+	u "github.com/hoenn/ynab-metrics/pkg/units"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"go.bmvs.io/ynab"

@@ -5,12 +5,13 @@ import (
 	"log"
 	"net/http"
 	"time"
-	"ynab-metrics/pkg/accounts"
-	"ynab-metrics/pkg/budgets"
-	"ynab-metrics/pkg/categories"
-	"ynab-metrics/pkg/config"
-	"ynab-metrics/pkg/ratelimit"
-	"ynab-metrics/pkg/transactions"
+
+	"github.com/hoenn/ynab-metrics/pkg/accounts"
+	"github.com/hoenn/ynab-metrics/pkg/budgets"
+	"github.com/hoenn/ynab-metrics/pkg/categories"
+	"github.com/hoenn/ynab-metrics/pkg/config"
+	"github.com/hoenn/ynab-metrics/pkg/ratelimit"
+	"github.com/hoenn/ynab-metrics/pkg/transactions"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 

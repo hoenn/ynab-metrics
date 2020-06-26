@@ -41,7 +41,6 @@ The YNAB API enforces [rate limiting](https://api.youneedabudget.com/#rate-limit
 ```
 $ git clone https://github.com/Hoenn/ynab-metrics
 $ cd ynab-metrics/
-$ go get -d ./...
 ```
 The project is ready to be built and run, before continuing create `ynab-metrics/config.json` based on the `sample.json` file in the same directory. Replace `access_token` with your actual access token.
 

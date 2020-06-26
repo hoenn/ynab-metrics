@@ -2,9 +2,10 @@ package budgets
 
 import (
 	"fmt"
+	"log"
+
 	"go.bmvs.io/ynab"
 	"go.bmvs.io/ynab/api/budget"
-	"log"
 )
 
 //GetBudgets returns the list of budgets associated with user token

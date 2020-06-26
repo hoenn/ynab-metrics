@@ -3,10 +3,10 @@ package accounts
 import (
 	"log"
 
+	u "github.com/hoenn/ynab-metrics/pkg/units"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.bmvs.io/ynab"
 	"go.bmvs.io/ynab/api/budget"
-	u "ynab-metrics/pkg/units"
 )
 
 var accountBalance = prometheus.NewGaugeVec(prometheus.GaugeOpts{
