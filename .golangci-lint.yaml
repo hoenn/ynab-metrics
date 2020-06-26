@@ -1,0 +1,46 @@
+# golangci.com configuration
+# https://github.com/golangci/golangci/wiki/Configuration
+linters-settings:
+  govet:
+    check-shadowing: true
+    autofix: true
+  golint:
+    min-confidence: 0.3
+  gofmt:
+    simplify: true
+  gocyclo:
+    min-complexity: 15
+  maligned:
+    suggest-new: true
+  dupl:
+    threshold: 120
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  typecheck:
+    autofix: true
+  misspell:
+    locale: US
+    auto-fix: true
+  lll:
+    line-length: 140
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - goconst
+    - gofmt
+    - maligned
+    - misspell
+    - goimports
+    - deadcode
+    - typecheck
+
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - text: "weak cryptographic primitive"
+      linters:
+        - gosec
+

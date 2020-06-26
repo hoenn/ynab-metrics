@@ -18,7 +18,10 @@ func ParseConfig(cfgFile string) *Config {
 		panic("Could not read config file")
 	}
 	var c Config
-	json.Unmarshal(jsonBytes, &c)
+	err = json.Unmarshal(jsonBytes, &c)
+	if err != nil {
+		panic("Could not unmarshal config file")
+	}
 	return &c
 }
 
