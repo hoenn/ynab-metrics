@@ -9,7 +9,7 @@ The YNAB browser and mobile apps have some graphs available, namely Net Worth at
 
 ## Grafana
 #### An example dashboard
-![img](grafana.png)
+![img](assets/grafana.png)
 
 ## Metrics Collected
 The metrics currently collected are

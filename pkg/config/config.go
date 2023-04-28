@@ -10,17 +10,17 @@ import (
 func ParseConfig(cfgFile string) *Config {
 	jsonFile, err := os.Open(cfgFile)
 	if err != nil {
-		panic("Could not open config file")
+		panic(err)
 	}
 	defer jsonFile.Close()
 	jsonBytes, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
-		panic("Could not read config file")
+		panic(err)
 	}
 	var c Config
 	err = json.Unmarshal(jsonBytes, &c)
 	if err != nil {
-		panic("Could not unmarshal config file")
+		panic(err)
 	}
 	return &c
 }

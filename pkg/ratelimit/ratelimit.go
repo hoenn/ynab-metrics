@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"go.bmvs.io/ynab"
+	"github.com/brunomvsouza/ynab.go"
 )
 
 var (

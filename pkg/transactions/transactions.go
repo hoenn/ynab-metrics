@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 
-	u "github.com/hoenn/ynab-metrics/pkg/units"
+	u "github.com/theoxifier/ynab-metrics/pkg/units"
 	"github.com/prometheus/client_golang/prometheus"
-	"go.bmvs.io/ynab"
-	"go.bmvs.io/ynab/api/budget"
-	"go.bmvs.io/ynab/api/transaction"
+	"github.com/brunomvsouza/ynab.go"
+	"github.com/brunomvsouza/ynab.go/api/budget"
+	"github.com/brunomvsouza/ynab.go/api/transaction"
 )
 
 var budgetTransactions = prometheus.NewGaugeVec(prometheus.GaugeOpts{

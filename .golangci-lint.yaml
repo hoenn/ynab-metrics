@@ -43,4 +43,3 @@ issues:
     - text: "weak cryptographic primitive"
       linters:
         - gosec
-

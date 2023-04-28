@@ -6,16 +6,16 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/hoenn/ynab-metrics/pkg/accounts"
-	"github.com/hoenn/ynab-metrics/pkg/budgets"
-	"github.com/hoenn/ynab-metrics/pkg/categories"
-	"github.com/hoenn/ynab-metrics/pkg/config"
-	"github.com/hoenn/ynab-metrics/pkg/ratelimit"
-	"github.com/hoenn/ynab-metrics/pkg/transactions"
+	"github.com/theoxifier/ynab-metrics/pkg/accounts"
+	"github.com/theoxifier/ynab-metrics/pkg/budgets"
+	"github.com/theoxifier/ynab-metrics/pkg/categories"
+	"github.com/theoxifier/ynab-metrics/pkg/config"
+	"github.com/theoxifier/ynab-metrics/pkg/ratelimit"
+	"github.com/theoxifier/ynab-metrics/pkg/transactions"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"go.bmvs.io/ynab"
+	"github.com/brunomvsouza/ynab.go"
 )
 
 var cfgFile = flag.String("config", "config.json", "The configuration file to use for exporting")
