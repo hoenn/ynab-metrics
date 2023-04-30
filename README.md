@@ -1,6 +1,6 @@
-# YNAB Metrics Exporter
+# YNAB Metrics Exporter - Forked and updated.
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/hoenn/ynab-metrics)](https://goreportcard.com/report/github.com/hoenn/ynab-metrics)
+[![Go Report Card](https://goreportcard.com/badge/github.com/theOxifier/ynab-metrics)](https://goreportcard.com/report/github.com/theOxifier/ynab-metrics)
 
 [YNAB](https://www.youneedabudget.com/) recently made an [API](https://api.youneedabudget.com/) to retrieve data for your user account. This project will allow you to poll the YNAB API with your personal access token and it will create and post [prometheus](https://github.com/prometheus/prometheus) metrics on the port of your choice.
 
@@ -24,8 +24,8 @@ The metrics currently collected are
 |rate_limit_used| | requests this hour|
 
 ## Configuration
+a sample-config.json can be found as follows.
 ```json
-sample-config.json
 {
   "port": "8080",
   "include_transactions": true,
@@ -39,7 +39,7 @@ The YNAB API enforces [rate limiting](https://api.youneedabudget.com/#rate-limit
 
 ## Installation
 ```
-$ git clone https://github.com/Hoenn/ynab-metrics
+$ git clone https://github.com/theOxifier/ynab-metrics
 $ cd ynab-metrics/
 ```
 The project is ready to be built and run, before continuing create `ynab-metrics/config.json` based on the `sample.json` file in the same directory. Replace `access_token` with your actual access token.
