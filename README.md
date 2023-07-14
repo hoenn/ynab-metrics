@@ -24,8 +24,8 @@ The metrics currently collected are
 |rate_limit_used| | requests this hour|
 
 ## Configuration
+An example `config.json`:
 ```json
-sample-config.json
 {
   "port": "8080",
   "include_transactions": true,
